@@ -42,6 +42,27 @@ const Watchlist = () => {
         <Link to="/add" className="add-btn">+ Add Content</Link>
       </div>
 
+          {contents.length > 0 && (
+        <div className="stats-summary">
+          <div className="stat-item">
+            <span className="stat-number">{contents.length}</span>
+            <span className="stat-label">Total Items</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-number">{contents.filter(c => c.status === 'watching').length}</span>
+            <span className="stat-label">Watching</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-number">{contents.filter(c => c.status === 'completed').length}</span>
+            <span className="stat-label">Completed</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-number">{contents.filter(c => c.status === 'plan-to-watch').length}</span>
+            <span className="stat-label">Plan to Watch</span>
+          </div>
+        </div>
+      )}
+
       <div className="filters">
         <input
           type="text"
@@ -135,8 +156,10 @@ const Watchlist = () => {
       </div>
 
       {filteredContents.length === 0 && (
-        <div className="empty-state">
-          <p>No content found. Start adding some!</p>
+        <div className="empty-state"><div className="empty-state">
+          <div className="empty-icon">📺</div>
+          <h2>Your Watchlist is Empty</h2>
+          <p>Start building your collection by adding movies, series, anime, or documentaries!</p>
           <Link to="/add" className="add-link">+ Add Your First Item</Link>
         </div>
       )}
