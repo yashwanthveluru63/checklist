@@ -42,12 +42,10 @@ const Watchlist = () => {
         <Link to="/add" className="add-btn">+ Add Content</Link>
       </div>
 
-      {contents && contents.length > 0 && (
         <div className="stats-summary">
           <div className="stat-item">
             <span className="stat-number">{contents.length}</span>
-                  
-          <div className="stat-item">
+                  ssName="stat-item">
             <span className="stat-number">{contents.filter(c => c.status === 'watching').length}</span>
           
           </div>
