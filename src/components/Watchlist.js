@@ -45,11 +45,13 @@ const Watchlist = () => {
         <div className="stats-summary">
           <div className="stat-item">
             <span className="stat-number">{contents.length}</span>
-                  ssName="stat-item">
-            <span className="stat-number">{contents.filter(c => c.status === 'watching').length}</span>
-          
+                <span className="stat-label">Total</span>          
           </div>
-          <span cla<div className="stat-item">
+                  <div className="stat-item">
+                <span className="stat-number">{contents.filter(c => c.status === 'watching').length}</span>
+                <span className="stat-label">Watching</span>
+              </div>
+                        <div className="stat-item">
             <span className="stat-number">{contents.filter(c => c.status === 'completed').length}</span>
             <span className="stat-label">Completed</span>
           </div>
