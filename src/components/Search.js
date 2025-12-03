@@ -46,6 +46,30 @@ function Search() {
         <button type="submit" className="search-button">Search</button>
       </form>
 
+                  <div className="platforms-section">
+        <h3>Popular Streaming Platforms</h3>
+        <div className="platforms-grid">
+          <a href="https://www.netflix.com" target="_blank" rel="noopener noreferrer" className="platform-card netflix">
+            <div className="platform-name">Netflix</div>
+          </a>
+          <a href="https://www.primevideo.com" target="_blank" rel="noopener noreferrer" className="platform-card prime">
+            <div className="platform-name">Prime Video</div>
+          </a>
+          <a href="https://www.hotstar.com" target="_blank" rel="noopener noreferrer" className="platform-card hotstar">
+            <div className="platform-name">Disney+ Hotstar</div>
+          </a>
+          <a href="https://www.hulu.com" target="_blank" rel="noopener noreferrer" className="platform-card hulu">
+            <div className="platform-name">Hulu</div>
+          </a>
+          <a href="https://www.hbomax.com" target="_blank" rel="noopener noreferrer" className="platform-card hbo">
+            <div className="platform-name">HBO Max</div>
+          </a>
+          <a href="https://www.apple.com/apple-tv-plus" target="_blank" rel="noopener noreferrer" className="platform-card apple">
+            <div className="platform-name">Apple TV+</div>
+          </a>
+        </div>
+      </div>
+
       {loading && <p className="loading">Searching...</p>}
 
       <div className="search-results">
