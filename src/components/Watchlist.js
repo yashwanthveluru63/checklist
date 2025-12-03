@@ -10,7 +10,7 @@ const Watchlist = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const getFilteredContents = () => {
-    return contents.filter(content => {
+    return (contents || []).filter(content => {
       const matchesType = filterType === 'all' || content.type === filterType;
       const matchesStatus = filterStatus === 'all' || content.status === filterStatus;
       const matchesSearch = content.title.toLowerCase().includes(searchQuery.toLowerCase());
