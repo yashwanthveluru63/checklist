@@ -156,7 +156,7 @@ const Watchlist = () => {
       </div>
 
       {filteredContents.length === 0 && (
-        <div className="empty-state"><div className="empty-state">
+        <div className="empty-state">
           <div className="empty-icon">📺</div>
           <h2>Your Watchlist is Empty</h2>
           <p>Start building your collection by adding movies, series, anime, or documentaries!</p>
