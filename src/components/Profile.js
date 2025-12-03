@@ -15,6 +15,14 @@ function Profile() {
     bio: localStorage.getItem('userBio') || '',
     avatar: localStorage.getItem('userAvatar') || '👤',
   });
+
+    // Edit form state
+  const [editForm, setEditForm] = useState({
+    name: profile.name,
+    email: profile.email,
+    bio: profile.bio,
+    avatar: profile.avatar,
+  });
   
     // eslint-disable-next-line no-unused-vars
   const [isEditing, setIsEditing] = useState(false);
