@@ -4,7 +4,7 @@ import { useContent } from '../context/ContentContext';
 import './Watchlist.css';
 
 const Watchlist = () => {
-  const { contents, deleteContent } = useContent();
+    const { content: contents, deleteContent } = useContent();
   const [filterType, setFilterType] = useState('all');
   const [filterStatus, setFilterStatus] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -42,15 +42,14 @@ const Watchlist = () => {
         <Link to="/add" className="add-btn">+ Add Content</Link>
       </div>
 
-          {contents.length > 0 && (
+      {contents && contents.length > 0 && (
         <div className="stats-summary">
           <div className="stat-item">
             <span className="stat-number">{contents.length}</span>
-                  {contents && contents.length > 0 && (
-          </div>
+                  
           <div className="stat-item">
             <span className="stat-number">{contents.filter(c => c.status === 'watching').length}</span>
-            <span className="stat-label">Watching</span>
+          
           </div>
           <div className="stat-item">
             <span className="stat-number">{contents.filter(c => c.status === 'completed').length}</span>
