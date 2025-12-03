@@ -16,22 +16,22 @@ function Profile() {
     avatar: localStorage.getItem('userAvatar') || '👤',
   });
 
-    // Edit form state
+  // Edit form state
   const [editForm, setEditForm] = useState({
     name: profile.name,
     email: profile.email,
     bio: profile.bio,
     avatar: profile.avatar,
   });
-  
-    // eslint-disable-next-line no-unused-vars
+
+  // eslint-disable-next-line no-unused-vars
   const [isEditing, setIsEditing] = useState(false);
-  
+
   // Theme state
   const [isDarkMode, setIsDarkMode] = useState(
     localStorage.getItem('theme') === 'dark'
   );
-  
+
   // Settings state
   const [settings, setSettings] = useState({
     emailNotifications: localStorage.getItem('emailNotifications') !== 'false',
@@ -118,7 +118,7 @@ function Profile() {
         {profile.bio && <p className="profile-bio">{profile.bio}</p>}
       </div>
 
-      {/* Tab Navigation */}
+      {/* Tab Navigation - Only 3 tabs now */}
       <div className="profile-tabs">
         <button 
           className={`tab ${activeTab === 'overview' ? 'active' : ''}`}
@@ -138,17 +138,10 @@ function Profile() {
         >
           Settings
         </button>
-        <button 
-          className={`tab ${activeTab === 'data' ? 'active' : ''}`}
-          onClick={() => setActiveTab('data')}
-        >
-          Data
-        </button>
       </div>
 
       {/* Tab Content */}
       <div className="profile-content">
-
         {/* Overview Tab */}
         {activeTab === 'overview' && (
           <div className="tab-panel">
@@ -192,6 +185,7 @@ function Profile() {
                     maxLength="2"
                   />
                 </div>
+
                 <div className="form-group">
                   <label>Name</label>
                   <input 
@@ -201,6 +195,7 @@ function Profile() {
                     placeholder="Your name"
                   />
                 </div>
+
                 <div className="form-group">
                   <label>Email</label>
                   <input 
@@ -210,6 +205,7 @@ function Profile() {
                     placeholder="your.email@example.com"
                   />
                 </div>
+
                 <div className="form-group">
                   <label>Bio</label>
                   <textarea 
@@ -219,6 +215,7 @@ function Profile() {
                     rows="4"
                   />
                 </div>
+
                 <div className="form-actions">
                   <button className="btn-primary" onClick={handleEditSave}>Save Changes</button>
                   <button className="btn-secondary" onClick={handleEditCancel}>Cancel</button>
@@ -228,7 +225,7 @@ function Profile() {
           </div>
         )}
 
-        {/* Settings Tab */}
+        {/* Settings Tab - Now includes Data Management */}
         {activeTab === 'settings' && (
           <div className="tab-panel">
             <div className="settings-section">
@@ -298,12 +295,8 @@ function Profile() {
                 </label>
               </div>
             </div>
-          </div>
-        )}
 
-        {/* Data Tab */}
-        {activeTab === 'data' && (
-          <div className="tab-panel">
+            {/* Data Management Section - Moved from Data tab */}
             <div className="data-section">
               <h2>Data Management</h2>
               
@@ -330,7 +323,6 @@ function Profile() {
             </div>
           </div>
         )}
-
       </div>
     </div>
   );
