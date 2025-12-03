@@ -49,7 +49,7 @@ const Watchlist = () => {
             <span className="stat-number">{contents.filter(c => c.status === 'watching').length}</span>
           
           </div>
-          <div className="stat-item">
+          <span cla<div className="stat-item">
             <span className="stat-number">{contents.filter(c => c.status === 'completed').length}</span>
             <span className="stat-label">Completed</span>
           </div>
