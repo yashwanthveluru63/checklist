@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
-import { getStoredContent, saveContent, getStoredUser, saveUser, clearUser } from '../utils/localStorage';
+import { getStoredContent, saveContent } from '../utils/localStorage';
 
 const ContentContext = createContext();
 
@@ -17,7 +17,7 @@ export const ContentProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    const user = getStoredUser();
+      // const user = getStoredUser(); // User auth not implemented
     if (user) {
       setCurrentUser(user);
       setIsAuthenticated(true);
@@ -33,7 +33,7 @@ export const ContentProvider = ({ children }) => {
     if (user) {
       setCurrentUser({ username });
       setIsAuthenticated(true);
-      saveUser({ username });
+      // saveUser({ username }); // User auth not implemented
       return true;
     }
     return false;
@@ -51,14 +51,14 @@ export const ContentProvider = ({ children }) => {
     
     setCurrentUser({ username });
     setIsAuthenticated(true);
-    saveUser({ username });
+    // saveUser({ username }); // User auth not implemented
     return true;
   };
 
   const logout = () => {
     setCurrentUser(null);
     setIsAuthenticated(false);
-    clearUser();
+    //     clearUser(); // User auth not implemented
   };
 
   const addContent = (newContent) => {
