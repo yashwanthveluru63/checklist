@@ -16,9 +16,8 @@ function Profile() {
     avatar: localStorage.getItem('userAvatar') || '👤',
   });
   
-  // Edit mode state
+    // eslint-disable-next-line no-unused-vars
   const [isEditing, setIsEditing] = useState(false);
-  const [editForm, setEditForm] = useState({ ...profile });
   
   // Theme state
   const [isDarkMode, setIsDarkMode] = useState(
