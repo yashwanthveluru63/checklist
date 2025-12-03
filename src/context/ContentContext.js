@@ -18,10 +18,10 @@ export const ContentProvider = ({ children }) => {
 
   useEffect(() => {
       // const user = getStoredUser(); // User auth not implemented
-    if (user) {
-      setCurrentUser(user);
-      setIsAuthenticated(true);
-    }
+  //     if (user) {
+    //       setCurrentUser(user);
+    //       setIsAuthenticated(true);
+  //     }
     const storedContent = getStoredContent();
     setContent(storedContent);
   }, []);
